@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace AlgorytmAES
 {
@@ -15,6 +14,9 @@ namespace AlgorytmAES
             AES128 aes = new AES128(key);
 
             string text = "TestAES128string";
+            if (args.Length > 0) {
+                text = args[0];
+            }
 
             byte[] plaintext = Encoding.UTF8.GetBytes(text);
             byte[] ciphertext = new byte[plaintext.Length];
